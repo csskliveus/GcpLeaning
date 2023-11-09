@@ -1,12 +1,15 @@
-GCP Organizing resources
+Load balancer service concepts
 
-Resource hierarchy helps to organize resources in google cloud. 
+Check settings like the 
+  1. externalTrafficPolicy 
+  2. GKE subsetting 
+for L4 internal load balancers determine how the load balancers are configured
 
-Resource hierarchy starts with root node, which is called organization. 
-  - define folders and projects under root node. 
-  
-  1. Folders: Folders are nodes in the cloud platform resource hierarchy. A folder can contain projects, other folders 
+Internal Load balancer
 
+If your clients are located in the same VPC network or in a network connected to the cluster's (VPC network), then use an Internal LoadBalancer Service. Internal LoadBalancer Services are implemented by using internal passthrough Network Load Balancers. Clients located in the same VPC network or in a network connected to the cluster's VPC network can access the Service by using the load balancer's IP address.
 
-https://cloud.google.com/architecture/landing-zones/decide-resource-hierarchy#option1
- 
+To create an internal LoadBalancer Service, include one of the following annotations in the metadata.annotations[] of the Service manifest:
+
+networking.gke.io/load-balancer-type: "Internal" (GKE 1.17 and later)
+cloud.google.com/load-balancer-type: "Internal" (versions earlier than 1.17)
