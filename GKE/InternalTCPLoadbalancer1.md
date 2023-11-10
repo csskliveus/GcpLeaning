@@ -26,7 +26,8 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/internal-load-balancing
 
 **Node Grouping**
 https://cloud.google.com/kubernetes-engine/docs/concepts/service-load-balancer#endpoint-grouping
+
 1. The Service manifest annotations and, for Internal LoadBalancer Service, the status of GKE subsetting determine the resulting Google Cloud load balancer and the type of backends. 
 2. Backends for Google Cloud pass-through load balancers identify the network interface (NIC) of the GKE node, not a particular node or Pod IP address.
-3. The type of load balancer and backends determine how nodes are grouped into GCE_VM_IP NEGs, instance groups, or target pools.
+3. {++ The type of load balancer and backends determine how nodes are grouped into GCE_VM_IP NEGs, instance groups, or target pools. ++}
 
