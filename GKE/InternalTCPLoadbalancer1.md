@@ -31,3 +31,4 @@ https://cloud.google.com/kubernetes-engine/docs/concepts/service-load-balancer#e
 2. Backends for Google Cloud pass-through load balancers identify the network interface (NIC) of the GKE node, not a particular node or Pod IP address.
 3. {++ The type of load balancer and backends determine how nodes are grouped into GCE_VM_IP NEGs, instance groups, or target pools. ++}
 
+![image](https://github.com/csskliveus/GcpLeaning/assets/53880733/8ef63faa-aecc-434b-9fbe-a2cb19242773)
