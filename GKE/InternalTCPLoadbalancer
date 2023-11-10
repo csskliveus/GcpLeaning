@@ -13,3 +13,13 @@ To create an internal LoadBalancer Service, include one of the following annotat
 
 networking.gke.io/load-balancer-type: "Internal" (GKE 1.17 and later)
 cloud.google.com/load-balancer-type: "Internal" (versions earlier than 1.17)
+
+GKESubsetting:
+
+1. GKE improves the scalability of internal load balancer services because it uses GCE_VM_IP network endpoint groups (NEGs) as backends instead of instance groups. 
+2. When GKE subsetting is enabled, GKE creates one NEG per compute zone per internal loadbalancer service.
+3. The member endpoints in the NEG are the IP addresses of nodes that have at least one of the Service's serving pods. 
+
+
+
+
